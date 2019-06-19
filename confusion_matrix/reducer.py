@@ -9,8 +9,8 @@ for line in sys.stdin:
     if key == prekey:
         prevalue += value
     else:
-        if prevalue: print("{} {}".format(prekey, prevalue))
+        if prevalue: print("{}\t{}".format(prekey, prevalue))
         prevalue = value
         prekey = key
 
-if prekey == key: print("{} {}".format(prekey, prevalue))
+if prekey == key: print("{}\t{}".format(prekey, prevalue))

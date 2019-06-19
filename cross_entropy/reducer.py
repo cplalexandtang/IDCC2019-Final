@@ -10,9 +10,9 @@ for line in sys.stdin:
         prevalue += value
         count += 1
     else:
-        if prekey: print("{} {}".format(prekey, prevalue/count))
+        if prekey: print("{}\t{}".format(prekey, prevalue/count))
         prevalue = value
         prekey = key
         count = 1
 
-if prekey == key: print("{} {}".format(prekey, prevalue/count))
+if prekey == key: print("{}\t{}".format(prekey, prevalue/count))
