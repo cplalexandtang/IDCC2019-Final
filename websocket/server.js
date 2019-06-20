@@ -94,6 +94,36 @@ var cross_entropy = () => {
     }).then((json) => {
       wss.clients.forEach((client) => {
         client.send(json);
+        //console.log('Sent: ' + json);
+      });
+    })
+}
+
+var plotelo = () => {
+  exec("../data/plotelo.py", {maxBuffer: 1024 * 1100})
+    .then((data) => (data.stdout))
+    .then((data) => {
+      json = JSON.stringify({
+          task: "plotelo",
+          img : data
+        })
+      wss.clients.forEach((client) => {
+        client.send(json);
+        //console.log('Sent: ' + json);
+      });
+    })
+}
+
+var plotwin = () => {
+  exec("../data/plotwin.py", {maxBuffer: 1024 * 1100})
+    .then((data) => (data.stdout))
+    .then((data) => {
+      json = JSON.stringify({
+          task: "plotwin",
+          img : data
+        })
+      wss.clients.forEach((client) => {
+        client.send(json);
         console.log('Sent: ' + json);
       });
     })
@@ -102,6 +132,8 @@ var cross_entropy = () => {
 var callback = () => {
   confusion_matrix();
   cross_entropy();
+  plotelo();
+  plotwin();
 }
 
 fs.watchFile('../data/mlb.csv', callback);

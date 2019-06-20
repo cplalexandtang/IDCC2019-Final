@@ -30,7 +30,7 @@ if sys.argv[1][0] == "r" or sys.argv[1][0] == "t":
             file.seek(0, 0)
             file.write(newdata[i] + '\n' + content)
             file.close()
-            time.sleep(3)
+            time.sleep(0.5)
 
 elif sys.argv[1][0] == "c":
     with open("mlb.csv", "w") as file:
