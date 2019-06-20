@@ -1,0 +1,53 @@
+h2 {
+    text-align: center;
+}
+
+#cross_entropy > table {
+    text-align: center;
+    border: 0.05em solid black;
+    border-collapse: collapse;
+    font-size: 0.8em;
+    margin: 0px auto;
+    width: 75%;
+}
+
+    #cross_entropy > table > tr > th, td {
+        border: 0.05em solid black;
+        border-collapse: collapse;
+    }
+
+#confusion_matrix > table {
+    text-align: center;
+    border: 0.05em solid black;
+    border-collapse: collapse;
+    font-size: 0.8em;
+    margin: 0px auto;
+    width: 75%;
+}
+
+    #confusion_matrix > table > tr > th, td {
+        border: 0.05em solid black;
+        border-collapse: collapse;
+    }
+
+#normalized_confusion_matrix > table {
+    text-align: center;
+    border: 0.05em solid black;
+    border-collapse: collapse;
+    font-size: 0.8em;
+    margin: 0px auto;
+    width: 75%;
+}
+
+    #normalizzed_confusion_matrix > table > tr > th, td {
+        border: 0.05em solid black;
+        border-collapse: collapse;
+    }
+
+div#plotelo {
+    text-align: center;
+}
+
+div#plotwin {
+    text-align: center;
+}

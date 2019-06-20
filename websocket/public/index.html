@@ -2,23 +2,1130 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <style media="screen">
-      td { vertical-align: top }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>IDCC Final</title>
   </head>
   <body>
-    <!--p>
-      <button id="send">Send Message</button>
-      <button id="close">Close</button>
-    </p-->
-    <ul id="log"></ul>
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-1">MLB Data Analysis</span>
+    </nav>
+    <br />
+
+    <div id="cross_entropy" class="container-fluid">
+      <h2>Cross Entropy Loss</h2>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Home/Away</th>
+            <th>KCR</th>
+            <th>NYM</th>
+            <th>SEA</th>
+            <th>MIN</th>
+            <th>SDP</th>
+            <th>DET</th>
+            <th>STL</th>
+            <th>PHI</th>
+            <th>COL</th>
+            <th>TEX</th>
+            <th>BOS</th>
+            <th>FLA</th>
+            <th>CIN</th>
+            <th>ATL</th>
+            <th>ANA</th>
+            <th>PIT</th>
+            <th>NYY</th>
+            <th>WSN</th>
+            <th>CHC</th>
+            <th>TBD</th>
+            <th>LAD</th>
+            <th>OAK</th>
+            <th>CLE</th>
+            <th>SFG</th>
+            <th>ARI</th>
+            <th>HOU</th>
+            <th>TOR</th>
+            <th>BAL</th>
+            <th>CHW</th>
+            <th>MIL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KCR</td>
+            <td id="KCR" class="KCR">1</td>
+            <td id="KCR" class="NYM">0</td>
+            <td id="KCR" class="SEA">0</td>
+            <td id="KCR" class="MIN">0</td>
+            <td id="KCR" class="SDP">0</td>
+            <td id="KCR" class="DET">0</td>
+            <td id="KCR" class="STL">0</td>
+            <td id="KCR" class="PHI">0</td>
+            <td id="KCR" class="COL">0</td>
+            <td id="KCR" class="TEX">0</td>
+            <td id="KCR" class="BOS">0</td>
+            <td id="KCR" class="FLA">0</td>
+            <td id="KCR" class="CIN">0</td>
+            <td id="KCR" class="ATL">0</td>
+            <td id="KCR" class="ANA">0</td>
+            <td id="KCR" class="PIT">0</td>
+            <td id="KCR" class="NYY">0</td>
+            <td id="KCR" class="WSN">0</td>
+            <td id="KCR" class="CHC">0</td>
+            <td id="KCR" class="TBD">0</td>
+            <td id="KCR" class="LAD">0</td>
+            <td id="KCR" class="OAK">0</td>
+            <td id="KCR" class="CLE">0</td>
+            <td id="KCR" class="SFG">0</td>
+            <td id="KCR" class="ARI">0</td>
+            <td id="KCR" class="HOU">0</td>
+            <td id="KCR" class="TOR">0</td>
+            <td id="KCR" class="BAL">0</td>
+            <td id="KCR" class="CHW">0</td>
+            <td id="KCR" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>NYM</td>
+            <td id="NYM" class="KCR">0</td>
+            <td id="NYM" class="NYM">1</td>
+            <td id="NYM" class="SEA">0</td>
+            <td id="NYM" class="MIN">0</td>
+            <td id="NYM" class="SDP">0</td>
+            <td id="NYM" class="DET">0</td>
+            <td id="NYM" class="STL">0</td>
+            <td id="NYM" class="PHI">0</td>
+            <td id="NYM" class="COL">0</td>
+            <td id="NYM" class="TEX">0</td>
+            <td id="NYM" class="BOS">0</td>
+            <td id="NYM" class="FLA">0</td>
+            <td id="NYM" class="CIN">0</td>
+            <td id="NYM" class="ATL">0</td>
+            <td id="NYM" class="ANA">0</td>
+            <td id="NYM" class="PIT">0</td>
+            <td id="NYM" class="NYY">0</td>
+            <td id="NYM" class="WSN">0</td>
+            <td id="NYM" class="CHC">0</td>
+            <td id="NYM" class="TBD">0</td>
+            <td id="NYM" class="LAD">0</td>
+            <td id="NYM" class="OAK">0</td>
+            <td id="NYM" class="CLE">0</td>
+            <td id="NYM" class="SFG">0</td>
+            <td id="NYM" class="ARI">0</td>
+            <td id="NYM" class="HOU">0</td>
+            <td id="NYM" class="TOR">0</td>
+            <td id="NYM" class="BAL">0</td>
+            <td id="NYM" class="CHW">0</td>
+            <td id="NYM" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>SEA</td>
+            <td id="SEA" class="KCR">0</td>
+            <td id="SEA" class="NYM">0</td>
+            <td id="SEA" class="SEA">1</td>
+            <td id="SEA" class="MIN">0</td>
+            <td id="SEA" class="SDP">0</td>
+            <td id="SEA" class="DET">0</td>
+            <td id="SEA" class="STL">0</td>
+            <td id="SEA" class="PHI">0</td>
+            <td id="SEA" class="COL">0</td>
+            <td id="SEA" class="TEX">0</td>
+            <td id="SEA" class="BOS">0</td>
+            <td id="SEA" class="FLA">0</td>
+            <td id="SEA" class="CIN">0</td>
+            <td id="SEA" class="ATL">0</td>
+            <td id="SEA" class="ANA">0</td>
+            <td id="SEA" class="PIT">0</td>
+            <td id="SEA" class="NYY">0</td>
+            <td id="SEA" class="WSN">0</td>
+            <td id="SEA" class="CHC">0</td>
+            <td id="SEA" class="TBD">0</td>
+            <td id="SEA" class="LAD">0</td>
+            <td id="SEA" class="OAK">0</td>
+            <td id="SEA" class="CLE">0</td>
+            <td id="SEA" class="SFG">0</td>
+            <td id="SEA" class="ARI">0</td>
+            <td id="SEA" class="HOU">0</td>
+            <td id="SEA" class="TOR">0</td>
+            <td id="SEA" class="BAL">0</td>
+            <td id="SEA" class="CHW">0</td>
+            <td id="SEA" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>MIN</td>
+            <td id="MIN" class="KCR">0</td>
+            <td id="MIN" class="NYM">0</td>
+            <td id="MIN" class="SEA">0</td>
+            <td id="MIN" class="MIN">1</td>
+            <td id="MIN" class="SDP">0</td>
+            <td id="MIN" class="DET">0</td>
+            <td id="MIN" class="STL">0</td>
+            <td id="MIN" class="PHI">0</td>
+            <td id="MIN" class="COL">0</td>
+            <td id="MIN" class="TEX">0</td>
+            <td id="MIN" class="BOS">0</td>
+            <td id="MIN" class="FLA">0</td>
+            <td id="MIN" class="CIN">0</td>
+            <td id="MIN" class="ATL">0</td>
+            <td id="MIN" class="ANA">0</td>
+            <td id="MIN" class="PIT">0</td>
+            <td id="MIN" class="NYY">0</td>
+            <td id="MIN" class="WSN">0</td>
+            <td id="MIN" class="CHC">0</td>
+            <td id="MIN" class="TBD">0</td>
+            <td id="MIN" class="LAD">0</td>
+            <td id="MIN" class="OAK">0</td>
+            <td id="MIN" class="CLE">0</td>
+            <td id="MIN" class="SFG">0</td>
+            <td id="MIN" class="ARI">0</td>
+            <td id="MIN" class="HOU">0</td>
+            <td id="MIN" class="TOR">0</td>
+            <td id="MIN" class="BAL">0</td>
+            <td id="MIN" class="CHW">0</td>
+            <td id="MIN" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>SDP</td>
+            <td id="SDP" class="KCR">0</td>
+            <td id="SDP" class="NYM">0</td>
+            <td id="SDP" class="SEA">0</td>
+            <td id="SDP" class="MIN">0</td>
+            <td id="SDP" class="SDP">1</td>
+            <td id="SDP" class="DET">0</td>
+            <td id="SDP" class="STL">0</td>
+            <td id="SDP" class="PHI">0</td>
+            <td id="SDP" class="COL">0</td>
+            <td id="SDP" class="TEX">0</td>
+            <td id="SDP" class="BOS">0</td>
+            <td id="SDP" class="FLA">0</td>
+            <td id="SDP" class="CIN">0</td>
+            <td id="SDP" class="ATL">0</td>
+            <td id="SDP" class="ANA">0</td>
+            <td id="SDP" class="PIT">0</td>
+            <td id="SDP" class="NYY">0</td>
+            <td id="SDP" class="WSN">0</td>
+            <td id="SDP" class="CHC">0</td>
+            <td id="SDP" class="TBD">0</td>
+            <td id="SDP" class="LAD">0</td>
+            <td id="SDP" class="OAK">0</td>
+            <td id="SDP" class="CLE">0</td>
+            <td id="SDP" class="SFG">0</td>
+            <td id="SDP" class="ARI">0</td>
+            <td id="SDP" class="HOU">0</td>
+            <td id="SDP" class="TOR">0</td>
+            <td id="SDP" class="BAL">0</td>
+            <td id="SDP" class="CHW">0</td>
+            <td id="SDP" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>DET</td>
+            <td id="DET" class="KCR">0</td>
+            <td id="DET" class="NYM">0</td>
+            <td id="DET" class="SEA">0</td>
+            <td id="DET" class="MIN">0</td>
+            <td id="DET" class="SDP">0</td>
+            <td id="DET" class="DET">1</td>
+            <td id="DET" class="STL">0</td>
+            <td id="DET" class="PHI">0</td>
+            <td id="DET" class="COL">0</td>
+            <td id="DET" class="TEX">0</td>
+            <td id="DET" class="BOS">0</td>
+            <td id="DET" class="FLA">0</td>
+            <td id="DET" class="CIN">0</td>
+            <td id="DET" class="ATL">0</td>
+            <td id="DET" class="ANA">0</td>
+            <td id="DET" class="PIT">0</td>
+            <td id="DET" class="NYY">0</td>
+            <td id="DET" class="WSN">0</td>
+            <td id="DET" class="CHC">0</td>
+            <td id="DET" class="TBD">0</td>
+            <td id="DET" class="LAD">0</td>
+            <td id="DET" class="OAK">0</td>
+            <td id="DET" class="CLE">0</td>
+            <td id="DET" class="SFG">0</td>
+            <td id="DET" class="ARI">0</td>
+            <td id="DET" class="HOU">0</td>
+            <td id="DET" class="TOR">0</td>
+            <td id="DET" class="BAL">0</td>
+            <td id="DET" class="CHW">0</td>
+            <td id="DET" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>STL</td>
+            <td id="STL" class="KCR">0</td>
+            <td id="STL" class="NYM">0</td>
+            <td id="STL" class="SEA">0</td>
+            <td id="STL" class="MIN">0</td>
+            <td id="STL" class="SDP">0</td>
+            <td id="STL" class="DET">0</td>
+            <td id="STL" class="STL">1</td>
+            <td id="STL" class="PHI">0</td>
+            <td id="STL" class="COL">0</td>
+            <td id="STL" class="TEX">0</td>
+            <td id="STL" class="BOS">0</td>
+            <td id="STL" class="FLA">0</td>
+            <td id="STL" class="CIN">0</td>
+            <td id="STL" class="ATL">0</td>
+            <td id="STL" class="ANA">0</td>
+            <td id="STL" class="PIT">0</td>
+            <td id="STL" class="NYY">0</td>
+            <td id="STL" class="WSN">0</td>
+            <td id="STL" class="CHC">0</td>
+            <td id="STL" class="TBD">0</td>
+            <td id="STL" class="LAD">0</td>
+            <td id="STL" class="OAK">0</td>
+            <td id="STL" class="CLE">0</td>
+            <td id="STL" class="SFG">0</td>
+            <td id="STL" class="ARI">0</td>
+            <td id="STL" class="HOU">0</td>
+            <td id="STL" class="TOR">0</td>
+            <td id="STL" class="BAL">0</td>
+            <td id="STL" class="CHW">0</td>
+            <td id="STL" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>PHI</td>
+            <td id="PHI" class="KCR">0</td>
+            <td id="PHI" class="NYM">0</td>
+            <td id="PHI" class="SEA">0</td>
+            <td id="PHI" class="MIN">0</td>
+            <td id="PHI" class="SDP">0</td>
+            <td id="PHI" class="DET">0</td>
+            <td id="PHI" class="STL">0</td>
+            <td id="PHI" class="PHI">1</td>
+            <td id="PHI" class="COL">0</td>
+            <td id="PHI" class="TEX">0</td>
+            <td id="PHI" class="BOS">0</td>
+            <td id="PHI" class="FLA">0</td>
+            <td id="PHI" class="CIN">0</td>
+            <td id="PHI" class="ATL">0</td>
+            <td id="PHI" class="ANA">0</td>
+            <td id="PHI" class="PIT">0</td>
+            <td id="PHI" class="NYY">0</td>
+            <td id="PHI" class="WSN">0</td>
+            <td id="PHI" class="CHC">0</td>
+            <td id="PHI" class="TBD">0</td>
+            <td id="PHI" class="LAD">0</td>
+            <td id="PHI" class="OAK">0</td>
+            <td id="PHI" class="CLE">0</td>
+            <td id="PHI" class="SFG">0</td>
+            <td id="PHI" class="ARI">0</td>
+            <td id="PHI" class="HOU">0</td>
+            <td id="PHI" class="TOR">0</td>
+            <td id="PHI" class="BAL">0</td>
+            <td id="PHI" class="CHW">0</td>
+            <td id="PHI" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>COL</td>
+            <td id="COL" class="KCR">0</td>
+            <td id="COL" class="NYM">0</td>
+            <td id="COL" class="SEA">0</td>
+            <td id="COL" class="MIN">0</td>
+            <td id="COL" class="SDP">0</td>
+            <td id="COL" class="DET">0</td>
+            <td id="COL" class="STL">0</td>
+            <td id="COL" class="PHI">0</td>
+            <td id="COL" class="COL">1</td>
+            <td id="COL" class="TEX">0</td>
+            <td id="COL" class="BOS">0</td>
+            <td id="COL" class="FLA">0</td>
+            <td id="COL" class="CIN">0</td>
+            <td id="COL" class="ATL">0</td>
+            <td id="COL" class="ANA">0</td>
+            <td id="COL" class="PIT">0</td>
+            <td id="COL" class="NYY">0</td>
+            <td id="COL" class="WSN">0</td>
+            <td id="COL" class="CHC">0</td>
+            <td id="COL" class="TBD">0</td>
+            <td id="COL" class="LAD">0</td>
+            <td id="COL" class="OAK">0</td>
+            <td id="COL" class="CLE">0</td>
+            <td id="COL" class="SFG">0</td>
+            <td id="COL" class="ARI">0</td>
+            <td id="COL" class="HOU">0</td>
+            <td id="COL" class="TOR">0</td>
+            <td id="COL" class="BAL">0</td>
+            <td id="COL" class="CHW">0</td>
+            <td id="COL" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>TEX</td>
+            <td id="TEX" class="KCR">0</td>
+            <td id="TEX" class="NYM">0</td>
+            <td id="TEX" class="SEA">0</td>
+            <td id="TEX" class="MIN">0</td>
+            <td id="TEX" class="SDP">0</td>
+            <td id="TEX" class="DET">0</td>
+            <td id="TEX" class="STL">0</td>
+            <td id="TEX" class="PHI">0</td>
+            <td id="TEX" class="COL">0</td>
+            <td id="TEX" class="TEX">1</td>
+            <td id="TEX" class="BOS">0</td>
+            <td id="TEX" class="FLA">0</td>
+            <td id="TEX" class="CIN">0</td>
+            <td id="TEX" class="ATL">0</td>
+            <td id="TEX" class="ANA">0</td>
+            <td id="TEX" class="PIT">0</td>
+            <td id="TEX" class="NYY">0</td>
+            <td id="TEX" class="WSN">0</td>
+            <td id="TEX" class="CHC">0</td>
+            <td id="TEX" class="TBD">0</td>
+            <td id="TEX" class="LAD">0</td>
+            <td id="TEX" class="OAK">0</td>
+            <td id="TEX" class="CLE">0</td>
+            <td id="TEX" class="SFG">0</td>
+            <td id="TEX" class="ARI">0</td>
+            <td id="TEX" class="HOU">0</td>
+            <td id="TEX" class="TOR">0</td>
+            <td id="TEX" class="BAL">0</td>
+            <td id="TEX" class="CHW">0</td>
+            <td id="TEX" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>BOS</td>
+            <td id="BOS" class="KCR">0</td>
+            <td id="BOS" class="NYM">0</td>
+            <td id="BOS" class="SEA">0</td>
+            <td id="BOS" class="MIN">0</td>
+            <td id="BOS" class="SDP">0</td>
+            <td id="BOS" class="DET">0</td>
+            <td id="BOS" class="STL">0</td>
+            <td id="BOS" class="PHI">0</td>
+            <td id="BOS" class="COL">0</td>
+            <td id="BOS" class="TEX">0</td>
+            <td id="BOS" class="BOS">1</td>
+            <td id="BOS" class="FLA">0</td>
+            <td id="BOS" class="CIN">0</td>
+            <td id="BOS" class="ATL">0</td>
+            <td id="BOS" class="ANA">0</td>
+            <td id="BOS" class="PIT">0</td>
+            <td id="BOS" class="NYY">0</td>
+            <td id="BOS" class="WSN">0</td>
+            <td id="BOS" class="CHC">0</td>
+            <td id="BOS" class="TBD">0</td>
+            <td id="BOS" class="LAD">0</td>
+            <td id="BOS" class="OAK">0</td>
+            <td id="BOS" class="CLE">0</td>
+            <td id="BOS" class="SFG">0</td>
+            <td id="BOS" class="ARI">0</td>
+            <td id="BOS" class="HOU">0</td>
+            <td id="BOS" class="TOR">0</td>
+            <td id="BOS" class="BAL">0</td>
+            <td id="BOS" class="CHW">0</td>
+            <td id="BOS" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>FLA</td>
+            <td id="FLA" class="KCR">0</td>
+            <td id="FLA" class="NYM">0</td>
+            <td id="FLA" class="SEA">0</td>
+            <td id="FLA" class="MIN">0</td>
+            <td id="FLA" class="SDP">0</td>
+            <td id="FLA" class="DET">0</td>
+            <td id="FLA" class="STL">0</td>
+            <td id="FLA" class="PHI">0</td>
+            <td id="FLA" class="COL">0</td>
+            <td id="FLA" class="TEX">0</td>
+            <td id="FLA" class="BOS">0</td>
+            <td id="FLA" class="FLA">1</td>
+            <td id="FLA" class="CIN">0</td>
+            <td id="FLA" class="ATL">0</td>
+            <td id="FLA" class="ANA">0</td>
+            <td id="FLA" class="PIT">0</td>
+            <td id="FLA" class="NYY">0</td>
+            <td id="FLA" class="WSN">0</td>
+            <td id="FLA" class="CHC">0</td>
+            <td id="FLA" class="TBD">0</td>
+            <td id="FLA" class="LAD">0</td>
+            <td id="FLA" class="OAK">0</td>
+            <td id="FLA" class="CLE">0</td>
+            <td id="FLA" class="SFG">0</td>
+            <td id="FLA" class="ARI">0</td>
+            <td id="FLA" class="HOU">0</td>
+            <td id="FLA" class="TOR">0</td>
+            <td id="FLA" class="BAL">0</td>
+            <td id="FLA" class="CHW">0</td>
+            <td id="FLA" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>CIN</td>
+            <td id="CIN" class="KCR">0</td>
+            <td id="CIN" class="NYM">0</td>
+            <td id="CIN" class="SEA">0</td>
+            <td id="CIN" class="MIN">0</td>
+            <td id="CIN" class="SDP">0</td>
+            <td id="CIN" class="DET">0</td>
+            <td id="CIN" class="STL">0</td>
+            <td id="CIN" class="PHI">0</td>
+            <td id="CIN" class="COL">0</td>
+            <td id="CIN" class="TEX">0</td>
+            <td id="CIN" class="BOS">0</td>
+            <td id="CIN" class="FLA">0</td>
+            <td id="CIN" class="CIN">1</td>
+            <td id="CIN" class="ATL">0</td>
+            <td id="CIN" class="ANA">0</td>
+            <td id="CIN" class="PIT">0</td>
+            <td id="CIN" class="NYY">0</td>
+            <td id="CIN" class="WSN">0</td>
+            <td id="CIN" class="CHC">0</td>
+            <td id="CIN" class="TBD">0</td>
+            <td id="CIN" class="LAD">0</td>
+            <td id="CIN" class="OAK">0</td>
+            <td id="CIN" class="CLE">0</td>
+            <td id="CIN" class="SFG">0</td>
+            <td id="CIN" class="ARI">0</td>
+            <td id="CIN" class="HOU">0</td>
+            <td id="CIN" class="TOR">0</td>
+            <td id="CIN" class="BAL">0</td>
+            <td id="CIN" class="CHW">0</td>
+            <td id="CIN" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>ATL</td>
+            <td id="ATL" class="KCR">0</td>
+            <td id="ATL" class="NYM">0</td>
+            <td id="ATL" class="SEA">0</td>
+            <td id="ATL" class="MIN">0</td>
+            <td id="ATL" class="SDP">0</td>
+            <td id="ATL" class="DET">0</td>
+            <td id="ATL" class="STL">0</td>
+            <td id="ATL" class="PHI">0</td>
+            <td id="ATL" class="COL">0</td>
+            <td id="ATL" class="TEX">0</td>
+            <td id="ATL" class="BOS">0</td>
+            <td id="ATL" class="FLA">0</td>
+            <td id="ATL" class="CIN">0</td>
+            <td id="ATL" class="ATL">1</td>
+            <td id="ATL" class="ANA">0</td>
+            <td id="ATL" class="PIT">0</td>
+            <td id="ATL" class="NYY">0</td>
+            <td id="ATL" class="WSN">0</td>
+            <td id="ATL" class="CHC">0</td>
+            <td id="ATL" class="TBD">0</td>
+            <td id="ATL" class="LAD">0</td>
+            <td id="ATL" class="OAK">0</td>
+            <td id="ATL" class="CLE">0</td>
+            <td id="ATL" class="SFG">0</td>
+            <td id="ATL" class="ARI">0</td>
+            <td id="ATL" class="HOU">0</td>
+            <td id="ATL" class="TOR">0</td>
+            <td id="ATL" class="BAL">0</td>
+            <td id="ATL" class="CHW">0</td>
+            <td id="ATL" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>ANA</td>
+            <td id="ANA" class="KCR">0</td>
+            <td id="ANA" class="NYM">0</td>
+            <td id="ANA" class="SEA">0</td>
+            <td id="ANA" class="MIN">0</td>
+            <td id="ANA" class="SDP">0</td>
+            <td id="ANA" class="DET">0</td>
+            <td id="ANA" class="STL">0</td>
+            <td id="ANA" class="PHI">0</td>
+            <td id="ANA" class="COL">0</td>
+            <td id="ANA" class="TEX">0</td>
+            <td id="ANA" class="BOS">0</td>
+            <td id="ANA" class="FLA">0</td>
+            <td id="ANA" class="CIN">0</td>
+            <td id="ANA" class="ATL">0</td>
+            <td id="ANA" class="ANA">1</td>
+            <td id="ANA" class="PIT">0</td>
+            <td id="ANA" class="NYY">0</td>
+            <td id="ANA" class="WSN">0</td>
+            <td id="ANA" class="CHC">0</td>
+            <td id="ANA" class="TBD">0</td>
+            <td id="ANA" class="LAD">0</td>
+            <td id="ANA" class="OAK">0</td>
+            <td id="ANA" class="CLE">0</td>
+            <td id="ANA" class="SFG">0</td>
+            <td id="ANA" class="ARI">0</td>
+            <td id="ANA" class="HOU">0</td>
+            <td id="ANA" class="TOR">0</td>
+            <td id="ANA" class="BAL">0</td>
+            <td id="ANA" class="CHW">0</td>
+            <td id="ANA" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>PIT</td>
+            <td id="PIT" class="KCR">0</td>
+            <td id="PIT" class="NYM">0</td>
+            <td id="PIT" class="SEA">0</td>
+            <td id="PIT" class="MIN">0</td>
+            <td id="PIT" class="SDP">0</td>
+            <td id="PIT" class="DET">0</td>
+            <td id="PIT" class="STL">0</td>
+            <td id="PIT" class="PHI">0</td>
+            <td id="PIT" class="COL">0</td>
+            <td id="PIT" class="TEX">0</td>
+            <td id="PIT" class="BOS">0</td>
+            <td id="PIT" class="FLA">0</td>
+            <td id="PIT" class="CIN">0</td>
+            <td id="PIT" class="ATL">0</td>
+            <td id="PIT" class="ANA">0</td>
+            <td id="PIT" class="PIT">1</td>
+            <td id="PIT" class="NYY">0</td>
+            <td id="PIT" class="WSN">0</td>
+            <td id="PIT" class="CHC">0</td>
+            <td id="PIT" class="TBD">0</td>
+            <td id="PIT" class="LAD">0</td>
+            <td id="PIT" class="OAK">0</td>
+            <td id="PIT" class="CLE">0</td>
+            <td id="PIT" class="SFG">0</td>
+            <td id="PIT" class="ARI">0</td>
+            <td id="PIT" class="HOU">0</td>
+            <td id="PIT" class="TOR">0</td>
+            <td id="PIT" class="BAL">0</td>
+            <td id="PIT" class="CHW">0</td>
+            <td id="PIT" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>NYY</td>
+            <td id="NYY" class="KCR">0</td>
+            <td id="NYY" class="NYM">0</td>
+            <td id="NYY" class="SEA">0</td>
+            <td id="NYY" class="MIN">0</td>
+            <td id="NYY" class="SDP">0</td>
+            <td id="NYY" class="DET">0</td>
+            <td id="NYY" class="STL">0</td>
+            <td id="NYY" class="PHI">0</td>
+            <td id="NYY" class="COL">0</td>
+            <td id="NYY" class="TEX">0</td>
+            <td id="NYY" class="BOS">0</td>
+            <td id="NYY" class="FLA">0</td>
+            <td id="NYY" class="CIN">0</td>
+            <td id="NYY" class="ATL">0</td>
+            <td id="NYY" class="ANA">0</td>
+            <td id="NYY" class="PIT">0</td>
+            <td id="NYY" class="NYY">1</td>
+            <td id="NYY" class="WSN">0</td>
+            <td id="NYY" class="CHC">0</td>
+            <td id="NYY" class="TBD">0</td>
+            <td id="NYY" class="LAD">0</td>
+            <td id="NYY" class="OAK">0</td>
+            <td id="NYY" class="CLE">0</td>
+            <td id="NYY" class="SFG">0</td>
+            <td id="NYY" class="ARI">0</td>
+            <td id="NYY" class="HOU">0</td>
+            <td id="NYY" class="TOR">0</td>
+            <td id="NYY" class="BAL">0</td>
+            <td id="NYY" class="CHW">0</td>
+            <td id="NYY" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>WSN</td>
+            <td id="WSN" class="KCR">0</td>
+            <td id="WSN" class="NYM">0</td>
+            <td id="WSN" class="SEA">0</td>
+            <td id="WSN" class="MIN">0</td>
+            <td id="WSN" class="SDP">0</td>
+            <td id="WSN" class="DET">0</td>
+            <td id="WSN" class="STL">0</td>
+            <td id="WSN" class="PHI">0</td>
+            <td id="WSN" class="COL">0</td>
+            <td id="WSN" class="TEX">0</td>
+            <td id="WSN" class="BOS">0</td>
+            <td id="WSN" class="FLA">0</td>
+            <td id="WSN" class="CIN">0</td>
+            <td id="WSN" class="ATL">0</td>
+            <td id="WSN" class="ANA">0</td>
+            <td id="WSN" class="PIT">0</td>
+            <td id="WSN" class="NYY">0</td>
+            <td id="WSN" class="WSN">1</td>
+            <td id="WSN" class="CHC">0</td>
+            <td id="WSN" class="TBD">0</td>
+            <td id="WSN" class="LAD">0</td>
+            <td id="WSN" class="OAK">0</td>
+            <td id="WSN" class="CLE">0</td>
+            <td id="WSN" class="SFG">0</td>
+            <td id="WSN" class="ARI">0</td>
+            <td id="WSN" class="HOU">0</td>
+            <td id="WSN" class="TOR">0</td>
+            <td id="WSN" class="BAL">0</td>
+            <td id="WSN" class="CHW">0</td>
+            <td id="WSN" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>CHC</td>
+            <td id="CHC" class="KCR">0</td>
+            <td id="CHC" class="NYM">0</td>
+            <td id="CHC" class="SEA">0</td>
+            <td id="CHC" class="MIN">0</td>
+            <td id="CHC" class="SDP">0</td>
+            <td id="CHC" class="DET">0</td>
+            <td id="CHC" class="STL">0</td>
+            <td id="CHC" class="PHI">0</td>
+            <td id="CHC" class="COL">0</td>
+            <td id="CHC" class="TEX">0</td>
+            <td id="CHC" class="BOS">0</td>
+            <td id="CHC" class="FLA">0</td>
+            <td id="CHC" class="CIN">0</td>
+            <td id="CHC" class="ATL">0</td>
+            <td id="CHC" class="ANA">0</td>
+            <td id="CHC" class="PIT">0</td>
+            <td id="CHC" class="NYY">0</td>
+            <td id="CHC" class="WSN">0</td>
+            <td id="CHC" class="CHC">1</td>
+            <td id="CHC" class="TBD">0</td>
+            <td id="CHC" class="LAD">0</td>
+            <td id="CHC" class="OAK">0</td>
+            <td id="CHC" class="CLE">0</td>
+            <td id="CHC" class="SFG">0</td>
+            <td id="CHC" class="ARI">0</td>
+            <td id="CHC" class="HOU">0</td>
+            <td id="CHC" class="TOR">0</td>
+            <td id="CHC" class="BAL">0</td>
+            <td id="CHC" class="CHW">0</td>
+            <td id="CHC" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>TBD</td>
+            <td id="TBD" class="KCR">0</td>
+            <td id="TBD" class="NYM">0</td>
+            <td id="TBD" class="SEA">0</td>
+            <td id="TBD" class="MIN">0</td>
+            <td id="TBD" class="SDP">0</td>
+            <td id="TBD" class="DET">0</td>
+            <td id="TBD" class="STL">0</td>
+            <td id="TBD" class="PHI">0</td>
+            <td id="TBD" class="COL">0</td>
+            <td id="TBD" class="TEX">0</td>
+            <td id="TBD" class="BOS">0</td>
+            <td id="TBD" class="FLA">0</td>
+            <td id="TBD" class="CIN">0</td>
+            <td id="TBD" class="ATL">0</td>
+            <td id="TBD" class="ANA">0</td>
+            <td id="TBD" class="PIT">0</td>
+            <td id="TBD" class="NYY">0</td>
+            <td id="TBD" class="WSN">0</td>
+            <td id="TBD" class="CHC">0</td>
+            <td id="TBD" class="TBD">1</td>
+            <td id="TBD" class="LAD">0</td>
+            <td id="TBD" class="OAK">0</td>
+            <td id="TBD" class="CLE">0</td>
+            <td id="TBD" class="SFG">0</td>
+            <td id="TBD" class="ARI">0</td>
+            <td id="TBD" class="HOU">0</td>
+            <td id="TBD" class="TOR">0</td>
+            <td id="TBD" class="BAL">0</td>
+            <td id="TBD" class="CHW">0</td>
+            <td id="TBD" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>LAD</td>
+            <td id="LAD" class="KCR">0</td>
+            <td id="LAD" class="NYM">0</td>
+            <td id="LAD" class="SEA">0</td>
+            <td id="LAD" class="MIN">0</td>
+            <td id="LAD" class="SDP">0</td>
+            <td id="LAD" class="DET">0</td>
+            <td id="LAD" class="STL">0</td>
+            <td id="LAD" class="PHI">0</td>
+            <td id="LAD" class="COL">0</td>
+            <td id="LAD" class="TEX">0</td>
+            <td id="LAD" class="BOS">0</td>
+            <td id="LAD" class="FLA">0</td>
+            <td id="LAD" class="CIN">0</td>
+            <td id="LAD" class="ATL">0</td>
+            <td id="LAD" class="ANA">0</td>
+            <td id="LAD" class="PIT">0</td>
+            <td id="LAD" class="NYY">0</td>
+            <td id="LAD" class="WSN">0</td>
+            <td id="LAD" class="CHC">0</td>
+            <td id="LAD" class="TBD">0</td>
+            <td id="LAD" class="LAD">1</td>
+            <td id="LAD" class="OAK">0</td>
+            <td id="LAD" class="CLE">0</td>
+            <td id="LAD" class="SFG">0</td>
+            <td id="LAD" class="ARI">0</td>
+            <td id="LAD" class="HOU">0</td>
+            <td id="LAD" class="TOR">0</td>
+            <td id="LAD" class="BAL">0</td>
+            <td id="LAD" class="CHW">0</td>
+            <td id="LAD" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>OAK</td>
+            <td id="OAK" class="KCR">0</td>
+            <td id="OAK" class="NYM">0</td>
+            <td id="OAK" class="SEA">0</td>
+            <td id="OAK" class="MIN">0</td>
+            <td id="OAK" class="SDP">0</td>
+            <td id="OAK" class="DET">0</td>
+            <td id="OAK" class="STL">0</td>
+            <td id="OAK" class="PHI">0</td>
+            <td id="OAK" class="COL">0</td>
+            <td id="OAK" class="TEX">0</td>
+            <td id="OAK" class="BOS">0</td>
+            <td id="OAK" class="FLA">0</td>
+            <td id="OAK" class="CIN">0</td>
+            <td id="OAK" class="ATL">0</td>
+            <td id="OAK" class="ANA">0</td>
+            <td id="OAK" class="PIT">0</td>
+            <td id="OAK" class="NYY">0</td>
+            <td id="OAK" class="WSN">0</td>
+            <td id="OAK" class="CHC">0</td>
+            <td id="OAK" class="TBD">0</td>
+            <td id="OAK" class="LAD">0</td>
+            <td id="OAK" class="OAK">1</td>
+            <td id="OAK" class="CLE">0</td>
+            <td id="OAK" class="SFG">0</td>
+            <td id="OAK" class="ARI">0</td>
+            <td id="OAK" class="HOU">0</td>
+            <td id="OAK" class="TOR">0</td>
+            <td id="OAK" class="BAL">0</td>
+            <td id="OAK" class="CHW">0</td>
+            <td id="OAK" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>CLE</td>
+            <td id="CLE" class="KCR">0</td>
+            <td id="CLE" class="NYM">0</td>
+            <td id="CLE" class="SEA">0</td>
+            <td id="CLE" class="MIN">0</td>
+            <td id="CLE" class="SDP">0</td>
+            <td id="CLE" class="DET">0</td>
+            <td id="CLE" class="STL">0</td>
+            <td id="CLE" class="PHI">0</td>
+            <td id="CLE" class="COL">0</td>
+            <td id="CLE" class="TEX">0</td>
+            <td id="CLE" class="BOS">0</td>
+            <td id="CLE" class="FLA">0</td>
+            <td id="CLE" class="CIN">0</td>
+            <td id="CLE" class="ATL">0</td>
+            <td id="CLE" class="ANA">0</td>
+            <td id="CLE" class="PIT">0</td>
+            <td id="CLE" class="NYY">0</td>
+            <td id="CLE" class="WSN">0</td>
+            <td id="CLE" class="CHC">0</td>
+            <td id="CLE" class="TBD">0</td>
+            <td id="CLE" class="LAD">0</td>
+            <td id="CLE" class="OAK">0</td>
+            <td id="CLE" class="CLE">1</td>
+            <td id="CLE" class="SFG">0</td>
+            <td id="CLE" class="ARI">0</td>
+            <td id="CLE" class="HOU">0</td>
+            <td id="CLE" class="TOR">0</td>
+            <td id="CLE" class="BAL">0</td>
+            <td id="CLE" class="CHW">0</td>
+            <td id="CLE" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>SFG</td>
+            <td id="SFG" class="KCR">0</td>
+            <td id="SFG" class="NYM">0</td>
+            <td id="SFG" class="SEA">0</td>
+            <td id="SFG" class="MIN">0</td>
+            <td id="SFG" class="SDP">0</td>
+            <td id="SFG" class="DET">0</td>
+            <td id="SFG" class="STL">0</td>
+            <td id="SFG" class="PHI">0</td>
+            <td id="SFG" class="COL">0</td>
+            <td id="SFG" class="TEX">0</td>
+            <td id="SFG" class="BOS">0</td>
+            <td id="SFG" class="FLA">0</td>
+            <td id="SFG" class="CIN">0</td>
+            <td id="SFG" class="ATL">0</td>
+            <td id="SFG" class="ANA">0</td>
+            <td id="SFG" class="PIT">0</td>
+            <td id="SFG" class="NYY">0</td>
+            <td id="SFG" class="WSN">0</td>
+            <td id="SFG" class="CHC">0</td>
+            <td id="SFG" class="TBD">0</td>
+            <td id="SFG" class="LAD">0</td>
+            <td id="SFG" class="OAK">0</td>
+            <td id="SFG" class="CLE">0</td>
+            <td id="SFG" class="SFG">1</td>
+            <td id="SFG" class="ARI">0</td>
+            <td id="SFG" class="HOU">0</td>
+            <td id="SFG" class="TOR">0</td>
+            <td id="SFG" class="BAL">0</td>
+            <td id="SFG" class="CHW">0</td>
+            <td id="SFG" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>ARI</td>
+            <td id="ARI" class="KCR">0</td>
+            <td id="ARI" class="NYM">0</td>
+            <td id="ARI" class="SEA">0</td>
+            <td id="ARI" class="MIN">0</td>
+            <td id="ARI" class="SDP">0</td>
+            <td id="ARI" class="DET">0</td>
+            <td id="ARI" class="STL">0</td>
+            <td id="ARI" class="PHI">0</td>
+            <td id="ARI" class="COL">0</td>
+            <td id="ARI" class="TEX">0</td>
+            <td id="ARI" class="BOS">0</td>
+            <td id="ARI" class="FLA">0</td>
+            <td id="ARI" class="CIN">0</td>
+            <td id="ARI" class="ATL">0</td>
+            <td id="ARI" class="ANA">0</td>
+            <td id="ARI" class="PIT">0</td>
+            <td id="ARI" class="NYY">0</td>
+            <td id="ARI" class="WSN">0</td>
+            <td id="ARI" class="CHC">0</td>
+            <td id="ARI" class="TBD">0</td>
+            <td id="ARI" class="LAD">0</td>
+            <td id="ARI" class="OAK">0</td>
+            <td id="ARI" class="CLE">0</td>
+            <td id="ARI" class="SFG">0</td>
+            <td id="ARI" class="ARI">1</td>
+            <td id="ARI" class="HOU">0</td>
+            <td id="ARI" class="TOR">0</td>
+            <td id="ARI" class="BAL">0</td>
+            <td id="ARI" class="CHW">0</td>
+            <td id="ARI" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>HOU</td>
+            <td id="HOU" class="KCR">0</td>
+            <td id="HOU" class="NYM">0</td>
+            <td id="HOU" class="SEA">0</td>
+            <td id="HOU" class="MIN">0</td>
+            <td id="HOU" class="SDP">0</td>
+            <td id="HOU" class="DET">0</td>
+            <td id="HOU" class="STL">0</td>
+            <td id="HOU" class="PHI">0</td>
+            <td id="HOU" class="COL">0</td>
+            <td id="HOU" class="TEX">0</td>
+            <td id="HOU" class="BOS">0</td>
+            <td id="HOU" class="FLA">0</td>
+            <td id="HOU" class="CIN">0</td>
+            <td id="HOU" class="ATL">0</td>
+            <td id="HOU" class="ANA">0</td>
+            <td id="HOU" class="PIT">0</td>
+            <td id="HOU" class="NYY">0</td>
+            <td id="HOU" class="WSN">0</td>
+            <td id="HOU" class="CHC">0</td>
+            <td id="HOU" class="TBD">0</td>
+            <td id="HOU" class="LAD">0</td>
+            <td id="HOU" class="OAK">0</td>
+            <td id="HOU" class="CLE">0</td>
+            <td id="HOU" class="SFG">0</td>
+            <td id="HOU" class="ARI">0</td>
+            <td id="HOU" class="HOU">1</td>
+            <td id="HOU" class="TOR">0</td>
+            <td id="HOU" class="BAL">0</td>
+            <td id="HOU" class="CHW">0</td>
+            <td id="HOU" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>TOR</td>
+            <td id="TOR" class="KCR">0</td>
+            <td id="TOR" class="NYM">0</td>
+            <td id="TOR" class="SEA">0</td>
+            <td id="TOR" class="MIN">0</td>
+            <td id="TOR" class="SDP">0</td>
+            <td id="TOR" class="DET">0</td>
+            <td id="TOR" class="STL">0</td>
+            <td id="TOR" class="PHI">0</td>
+            <td id="TOR" class="COL">0</td>
+            <td id="TOR" class="TEX">0</td>
+            <td id="TOR" class="BOS">0</td>
+            <td id="TOR" class="FLA">0</td>
+            <td id="TOR" class="CIN">0</td>
+            <td id="TOR" class="ATL">0</td>
+            <td id="TOR" class="ANA">0</td>
+            <td id="TOR" class="PIT">0</td>
+            <td id="TOR" class="NYY">0</td>
+            <td id="TOR" class="WSN">0</td>
+            <td id="TOR" class="CHC">0</td>
+            <td id="TOR" class="TBD">0</td>
+            <td id="TOR" class="LAD">0</td>
+            <td id="TOR" class="OAK">0</td>
+            <td id="TOR" class="CLE">0</td>
+            <td id="TOR" class="SFG">0</td>
+            <td id="TOR" class="ARI">0</td>
+            <td id="TOR" class="HOU">0</td>
+            <td id="TOR" class="TOR">1</td>
+            <td id="TOR" class="BAL">0</td>
+            <td id="TOR" class="CHW">0</td>
+            <td id="TOR" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>BAL</td>
+            <td id="BAL" class="KCR">0</td>
+            <td id="BAL" class="NYM">0</td>
+            <td id="BAL" class="SEA">0</td>
+            <td id="BAL" class="MIN">0</td>
+            <td id="BAL" class="SDP">0</td>
+            <td id="BAL" class="DET">0</td>
+            <td id="BAL" class="STL">0</td>
+            <td id="BAL" class="PHI">0</td>
+            <td id="BAL" class="COL">0</td>
+            <td id="BAL" class="TEX">0</td>
+            <td id="BAL" class="BOS">0</td>
+            <td id="BAL" class="FLA">0</td>
+            <td id="BAL" class="CIN">0</td>
+            <td id="BAL" class="ATL">0</td>
+            <td id="BAL" class="ANA">0</td>
+            <td id="BAL" class="PIT">0</td>
+            <td id="BAL" class="NYY">0</td>
+            <td id="BAL" class="WSN">0</td>
+            <td id="BAL" class="CHC">0</td>
+            <td id="BAL" class="TBD">0</td>
+            <td id="BAL" class="LAD">0</td>
+            <td id="BAL" class="OAK">0</td>
+            <td id="BAL" class="CLE">0</td>
+            <td id="BAL" class="SFG">0</td>
+            <td id="BAL" class="ARI">0</td>
+            <td id="BAL" class="HOU">0</td>
+            <td id="BAL" class="TOR">0</td>
+            <td id="BAL" class="BAL">1</td>
+            <td id="BAL" class="CHW">0</td>
+            <td id="BAL" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>CHW</td>
+            <td id="CHW" class="KCR">0</td>
+            <td id="CHW" class="NYM">0</td>
+            <td id="CHW" class="SEA">0</td>
+            <td id="CHW" class="MIN">0</td>
+            <td id="CHW" class="SDP">0</td>
+            <td id="CHW" class="DET">0</td>
+            <td id="CHW" class="STL">0</td>
+            <td id="CHW" class="PHI">0</td>
+            <td id="CHW" class="COL">0</td>
+            <td id="CHW" class="TEX">0</td>
+            <td id="CHW" class="BOS">0</td>
+            <td id="CHW" class="FLA">0</td>
+            <td id="CHW" class="CIN">0</td>
+            <td id="CHW" class="ATL">0</td>
+            <td id="CHW" class="ANA">0</td>
+            <td id="CHW" class="PIT">0</td>
+            <td id="CHW" class="NYY">0</td>
+            <td id="CHW" class="WSN">0</td>
+            <td id="CHW" class="CHC">0</td>
+            <td id="CHW" class="TBD">0</td>
+            <td id="CHW" class="LAD">0</td>
+            <td id="CHW" class="OAK">0</td>
+            <td id="CHW" class="CLE">0</td>
+            <td id="CHW" class="SFG">0</td>
+            <td id="CHW" class="ARI">0</td>
+            <td id="CHW" class="HOU">0</td>
+            <td id="CHW" class="TOR">0</td>
+            <td id="CHW" class="BAL">0</td>
+            <td id="CHW" class="CHW">1</td>
+            <td id="CHW" class="MIL">0</td>
+          </tr>
+          <tr>
+            <td>MIL</td>
+            <td id="MIL" class="KCR">0</td>
+            <td id="MIL" class="NYM">0</td>
+            <td id="MIL" class="SEA">0</td>
+            <td id="MIL" class="MIN">0</td>
+            <td id="MIL" class="SDP">0</td>
+            <td id="MIL" class="DET">0</td>
+            <td id="MIL" class="STL">0</td>
+            <td id="MIL" class="PHI">0</td>
+            <td id="MIL" class="COL">0</td>
+            <td id="MIL" class="TEX">0</td>
+            <td id="MIL" class="BOS">0</td>
+            <td id="MIL" class="FLA">0</td>
+            <td id="MIL" class="CIN">0</td>
+            <td id="MIL" class="ATL">0</td>
+            <td id="MIL" class="ANA">0</td>
+            <td id="MIL" class="PIT">0</td>
+            <td id="MIL" class="NYY">0</td>
+            <td id="MIL" class="WSN">0</td>
+            <td id="MIL" class="CHC">0</td>
+            <td id="MIL" class="TBD">0</td>
+            <td id="MIL" class="LAD">0</td>
+            <td id="MIL" class="OAK">0</td>
+            <td id="MIL" class="CLE">0</td>
+            <td id="MIL" class="SFG">0</td>
+            <td id="MIL" class="ARI">0</td>
+            <td id="MIL" class="HOU">0</td>
+            <td id="MIL" class="TOR">0</td>
+            <td id="MIL" class="BAL">0</td>
+            <td id="MIL" class="CHW">0</td>
+            <td id="MIL" class="MIL">1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <hr />
+
+    <div id="confusion_matrix" class="container-fluid">
+      <h2>Confusion Matrix</h2>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Predicted/True</th>
+            <th>Home Lost</th>
+            <th>Home won</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Home predicted to loss</td>
+            <td id="0">0</td>
+            <td id="2">0</td>
+          </tr>
+          <tr>
+            <td>Home predicted to win</td>
+            <td id="1">0</td>
+            <td id="3">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <hr />
+
+    <div id="normalized_confusion_matrix" class="container-fluid">
+      <h2>Normalized Confusion Matrix</h2>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Predicted/True</th>
+            <th>Home Lost</th>
+            <th>Home won</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Home predicted to loss</td>
+            <td id="0" class="normalized">0</td>
+            <td id="2" class="normalized">0</td>
+          </tr>
+          <tr>
+            <td>Home predicted to win</td>
+            <td id="1" class="normalized">0</td>
+            <td id="3" class="normalized">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <hr />
+
+    <div id="plotelo" class="container-fluid">
+      <h2>Elo Rating Plot</h2>
+    </div>
+    <br />
+    <hr />
+
+    <div id="plotwin" class="container-fluid">
+        <h2>Winning Rate Plot</h2>
+    </div>
+    <br />
+    <hr />
+
+    <footer class="page-footer font-small blue">
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyleft:
+        <a href="https://mdbootstrap.com/education/bootstrap/">IDCC</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
       crossorigin="anonymous">
     </script>
-    <script src="const.js"></script>
     <script src="client.js"></script>
   </body>
 </html>
