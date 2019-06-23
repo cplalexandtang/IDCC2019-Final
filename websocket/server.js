@@ -37,7 +37,12 @@ wss.on('connection', (socket) => {
 });
 
 var confusion_matrix = () => {
-  exec("cat ../data/mlb.csv | ../confusion_matrix/mapper.py | sort | ../confusion_matrix/reducer.py")
+  execStr = "hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar "
+  execStr += "-mapper \"../confusion_matrix/mapper.py\" "
+  execStr += "-reducer \"../confusion_matrix/reducer.py\" "
+  execStr += "-input /data/mlb.csv "
+  execStr += "-output /out"
+  exec(execStr)
     .then((data) => {
       data = data.stdout.split("\n")
       data.pop();
@@ -59,7 +64,12 @@ var confusion_matrix = () => {
 }
 
 var cross_entropy = () => {
-  exec("cat ../data/mlb.csv | ../cross_entropy/mapper.py | sort | ../cross_entropy/reducer.py")
+  execStr = "hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar "
+  execStr += "-mapper \"../cross_entropy/mapper.py\" "
+  execStr += "-reducer \"../cross_entropy/reducer.py\" "
+  execStr += "-input /data/mlb.csv "
+  execStr += "-output /out"
+  exec(execStr)
     .then((data) => {
       data = data.stdout.split("\n")
       data.pop();
